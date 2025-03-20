@@ -1,2 +1,2 @@
-# IT-s-your-life_jjh
+# 내용 정리
 IT's your life 과정 정리
