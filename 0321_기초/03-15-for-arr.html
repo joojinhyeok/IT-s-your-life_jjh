@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일명</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!-- 
+        v-for arr
+        (item, index) => array
+        item: 배열의 요소
+        index: 배열의 인덱스
+        -->
+        <li v-for="(fruit, index) in fruits" :key="index">
+          {{index}} - {{fruit}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp, ref, reactive } = Vue;
+
+      const app = createApp({
+        setup() {
+          // ref()
+          // 주로 사용하는 곳 -> 단일값(배열, 객체 사용 가능) + 체크박스처럼 값이 계속 추가되거나 삭제될 때 주로 ref()를 사용
+          //   값을 입력 받을 때는 ref()를 사용
+          // .value() 사용
+
+          // reactive()
+          // 주로 사용하는 곳 -> 배열, 객체
+          // .value() 사용하지 않아도 됨
+
+          // 언제 reactive()를 사용할까?
+          // 1. 여러 속성을 하나의 객체로 묶어 관리하고 싶을때 -> 스타일 지정시 여러 스타일을 정의해서 객체로 묶은 후 한번에 전달할 때
+          // 2. 배열 또는 배열안의 객체를 반응형으로 다루고 싶을때
+          // 3. form이나 복합 상태를 관리할때 -> 여러 input값을 한번에 받아올 때
+          //   ----> .value()를 사용하기 귀찮을때
+
+          //   const fruits = ref(["사과", "배", "포도"]);
+          const fruits = reactive(["사과", "배", "포도"]);
+
+          return {
+            fruits,
+          };
+        },
+      });
+
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>
