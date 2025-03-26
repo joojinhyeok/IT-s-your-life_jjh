@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolist 연습</title>
+    <link rel="stylesheet" href="./연습.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1 class="title">작심</h1>
+      </header>
+      <div class="con1 mw">
+        <input type="text" placeholder="할 일을 입력하세요" />
+        <button>추가하기</button>
+      </div>
+      <div class="con2 mw">
+        <button>전체</button>
+        <button>미완료</button>
+        <button>완료</button>
+      </div>
+      <div class="con3 mw">
+        <ul>
+          <li><input type="checkbox" />청소하기 <i>삭제</i></li>
+          <li><input type="checkbox" />빨래하기 <i>삭제</i></li>
+          <li><input type="checkbox" />관리비 결제 <i>삭제</i></li>
+        </ul>
+      </div>
+      <div class="con4 mw">
+        <p>
+          <span>미완료</span><span>0</span> <span>완료</span><span>0</span>
+          <button>완료항목 일괄삭제</button>
+        </p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp } = Vue;
+
+      let vm = createApp({
+        name: "App",
+        data() {
+          return {
+            message: "Hello Vue!",
+          };
+        },
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>
