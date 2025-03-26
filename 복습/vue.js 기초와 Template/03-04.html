@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일명</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-model.lazy는 버퍼의 개념이랑 비슷함. 저장해놨다가 한번에 불러옴 -->
+      <!-- 입력한 값을 바로 출력하려면 이벤트를 적용해 함수를 만들어야 함 -->
+      <input type="text" v-model="name" @input="onChange($event)" />
+      <br />
+      입력한 값: <span>{{name}}</span>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp } = Vue;
+
+      let vm = createApp({
+        name: "App",
+        data() {
+          return {
+            name: "",
+          };
+        },
+        methods: {
+          onChange(e) {
+            this.name = e.target.value;
+          },
+        },
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>

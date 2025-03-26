@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일명</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 옵션 API 사용 -->
+      <div>
+        <h1>취미생활</h1>
+        <label v-for="(a, index) in hobby" :key="index">
+          <input type="checkbox" />
+          {{a}}
+        </label>
+      </div>
+      <div>
+        <h1>상품 분류 선택</h1>
+        <select>
+          <option v-for="b in category">{{b}}</option>
+        </select>
+        <hr />
+        <div>
+          <p>선택한 취미:</p>
+          <p>선택한 상품 분류:</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp } = Vue;
+
+      let vm = createApp({
+        name: "App",
+        data() {
+          return {
+            hobby: ["운동", "독서", "음악", "댄스", "역사"],
+            category: "운동, 독서, 음악, 댄스, 역사".split(","),
+          };
+        },
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>
