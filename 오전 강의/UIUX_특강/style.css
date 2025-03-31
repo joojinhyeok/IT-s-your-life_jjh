@@ -1,0 +1,27 @@
+.flex-container {
+  width: 300px;
+  height: 200px;
+  background-color: #c4c4c4;
+  border: 1px solid black;
+  display: flex; /* 기존의 div(block요소)를 flex 형태로 바꿔 가로 방향으로 div 요소를 배치(요소의 width는 최소한으로 자동 부여 */
+  /* flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap; */
+
+  /* 주축 방향으로 정렬
+  justify-content: space-evenly;
+
+  교차축 방향으로 정렬 
+  align-items: center; */
+}
+
+.flex-item {
+  width: 50px; /* 직접 지정해도 부모 요소 width에 맞게 자동으로 조정됨 */
+  color: white;
+  background-color: #ff5252;
+  flex-shrink: 0; /* 부모 컨테이너의 공간이 부족해도 item이 줄어들지 않음 */
+}
+
+.flex-item:nth-child(2n) {
+  background-color: #bf5252;
+}

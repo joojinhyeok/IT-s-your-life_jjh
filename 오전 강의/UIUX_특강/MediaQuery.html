@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 미디어 쿼리(Media Query)
+        미디어에 따른 쿼리(문법)
+        css에서 화면, 크기, 방향, 해상도, 기기 종류 등에 따라 다른 스타일을 적용할 수 있게 해주는 기능 */
+      /* 반응형 디자인과 적응형 디자인 
+      미디어 타입
+      - all, screen, print, speech*/
+      /* 조건
+      - min-width, max-width, min-height,, max-height, orientation */
+
+      h1 {
+        /* 모바일 기준 */
+        color: orange;
+      }
+
+      @media screen and (min-width: 768px) {
+        /* 태블릿 사이즈: 768px */
+        h1 {
+          color: green;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        /* 데스크탑 사이즈: 1024px */
+        h1 {
+          /* width가 1024px 이상일 때만 h1에 color: red 적용 */
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>

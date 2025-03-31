@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  /* repeat(4, 100px)은 100px 100px 100px 100px 이런식으로 적는 것과 동일 */
+  grid-template-columns: repeat(3, 100px); /* 열에 대한 크기 조절 */
+  grid-template-rows: repeat(2, 100px); /* 행에 대한 크기 조절 */
+
+  grid-auto-rows: 100px; /* 위에 grid-template-rows에서 지정한 rows외에 rows들의 크기를 조정하는 속성 */
+  column-gap: 1rem; /* 1rem은 보통 16px */
+  row-gap: 1rem;
+  align-items: stretch;
+}
+
+.grid-item {
+  color: white;
+  background-color: #ff5252;
+}
+
+.grid-item:nth-child(2n) {
+  background-color: #bf5e5e;
+}
+
+.grid-item:nth-child(3n) {
+  background-color: green;
+}
+
+.grid-item:nth-child(4n) {
+  background-color: orange;
+}
+
+.item2 {
+  grid-column: 2/4;
+  grid-row: 1/3;
+}

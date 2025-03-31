@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="grid_layout.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 미디어 쿼리 (Media Query) */
+      /* 미디어에 따른 쿼리 (문법) */
+      /* CSS에서 화면 크기, 방향, 해상도, 기기 종류 등에 따라 다른 스타일을 적용할 수 있게 해주는 기능 */
+      /* 반응형 디자인과 적응형 디자인
+           적응형 코딩 - 특정 해상도에 따른 CSS 코드를 동기처리 */
+      /* 미디어 타입 */
+      /* - all, screen, print, speech */
+      /* all: 전체 적용, screen: pc나 모바일, print: 프린트, speech: 음성 출력 장치 */
+      /* 조건 */
+      /* - min-width, max-width, min-height, max-height, orientation, resolution */
+      /* @media [미디어타입] and (조건) {
+            조건에 따른 스타일
+        } */
+      /* 미디어 쿼리를 쓸 땐 이 사이즈 순서를 지켜줘야 함 */
+      /* 모바일 사이즈 */
+      h1 {
+        color: orange;
+      }
+      /* 테블릿 사이즈 */
+      /* 762 <= ?? <= 1024 */
+      @media screen and (min-width: 768px) {
+        h1 {
+          color: green;
+        }
+      }
+      /* 데스크탑 사이즈 */
+      /* ?? >= 1024 */
+      @media screen and (min-width: 1024px) {
+        /* 조건에 따른 스타일 */
+        h1 {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="grid">
+          <div class="column-xs-12 column-md-10">
+            <h1 class="nav_title">Grid Layout</h1>
+          </div>
+          <div class="column-xs-12 column-md-2">
+            <ul class="nav-list">
+              <li>
+                <a href="#" class="active">Story</a>
+              </li>
+              <li>
+                <a href="#">Album</a>
+              </li>
+            </ul>
+          </div>
+          <!-- 데스크탑에서는 10개 2개, 모바일에서는 1칸 1칸씩 차지하겠다 -->
+        </div>
+      </div>
+    </nav>
+    <section class="gallery">
+      <div class="container">
+        <div class="grid">
+          <div class="column-xs-12 column-md-4">
+            <figure class="img-container">
+              <img src="images/1.jpg" alt="1.jpg" />
+            </figure>
+          </div>
+          <div class="column-xs-12 column-md-4">
+            <figure class="img-container">
+              <img src="images/2.jpg" alt="2.jpg" />
+            </figure>
+          </div>
+          <div class="column-xs-12 column-md-4">
+            <figure class="img-container">
+              <img src="images/3.jpg" alt="3.jpg" />
+            </figure>
+          </div>
+          <div class="column-xs-12 column-md-6">
+            <figure class="img-container">
+              <img src="images/4.jpg" alt="4.jpg" />
+            </figure>
+          </div>
+          <div class="column-xs-12 column-md-6">
+            <figure class="img-container">
+              <img src="images/5.jpg" alt="5.jpg" />
+            </figure>
+          </div>
+          <div class="column-xs-12">
+            <figure class="img-container">
+              <img src="images/6.jpg" alt="6.jpg" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid">
+          <div class="column-xs-12">
+            <ul class="social">
+              <li>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+              </li>
+            </ul>
+            <p class="copyright">&copy; Copyright 2025</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
